@@ -59,7 +59,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       t.deepEqual module.exports, { assign, allPass, isObject, dbname, docid, urlname }
 
-## Version 0.0.0
+## Version 0.1.0
 
 ## License [MIT](LICENSE)
 
