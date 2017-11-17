@@ -46,6 +46,24 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       "#{ url.host }#{ url.pathname }}"
 
+### Generators
+
+    mkkey = (resource) -> switch resource.type
+
+      when 'sync' then "#{ resource.local } <-> #{ resource.remote }"
+
+      when 'push' then "#{ resource.local } -> #{ resource.remote }"
+
+      when 'pull' then "#{ resource.local } <- #{ resource.remote }"
+
+    mkconf = (resource, key = mkkey resource) ->
+
+      return unless key
+
+      { type, queue, local, remote } = resource
+
+      { key, local, remote, retry: false, live: queue in ['realtime', 'live'] }
+
 ### Exports
 
     module.exports = { assign, allPass, isObject, dbname, docid, urlname }
