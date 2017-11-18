@@ -46,7 +46,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       url = new URL url
 
-      "#{ url.host }#{ url.pathname }}"
+      "#{ url.host }#{ url.pathname }"
 
 ### Generators
 
