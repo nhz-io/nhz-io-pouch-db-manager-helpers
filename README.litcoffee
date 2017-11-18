@@ -83,7 +83,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
         assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority
       }
 
-## Version 0.1.2
+## Version 0.1.3
 
 ## License [MIT](LICENSE)
 
