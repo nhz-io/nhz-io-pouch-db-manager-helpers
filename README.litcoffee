@@ -75,7 +75,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 ### Exports
 
     module.exports = {
-      assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority
+      assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority, mkname
     }
 
 ## Tests
@@ -86,7 +86,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
       t.plan 1
 
       t.deepEqual module.exports, {
-        assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority
+        assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority, mkname
       }
 
 ## Version 0.1.5
