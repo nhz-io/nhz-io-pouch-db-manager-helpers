@@ -64,7 +64,7 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       { type, queue, local, remote } = resource
 
-      { key, type, local, remote, retry: false, live: queue in ['realtime', 'live'] }
+      { key, type, queue, local, remote, retry: false, live: queue in ['realtime', 'live'] }
 
     mkname = (target) ->
 
