@@ -66,6 +66,12 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       { key, type, local, remote, retry: false, live: queue in ['realtime', 'live'] }
 
+    mkname = (target) ->
+
+      name = unless isObject target then target else target.name
+
+      unless name.match? /^https?:\/\// then name else urlname name
+
 ### Exports
 
     module.exports = {
