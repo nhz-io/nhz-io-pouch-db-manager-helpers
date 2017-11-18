@@ -34,6 +34,8 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
     isObject = (target) -> typeof target is 'object'
 
+    priority = (test) -> ['sync', 'live', 'realtime'].indexOf test
+
 ### Sanitizers
 
     dbname = (db) -> if isObject db then db.name else db
@@ -62,11 +64,13 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
 
       { type, queue, local, remote } = resource
 
-      { key, local, remote, retry: false, live: queue in ['realtime', 'live'] }
+      { key, type, local, remote, retry: false, live: queue in ['realtime', 'live'] }
 
 ### Exports
 
-    module.exports = { assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf }
+    module.exports = {
+      assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority
+    }
 
 ## Tests
 
@@ -75,7 +79,9 @@ const helpers = require('@nhz.io/pouch-db-manager-helpers')
     test 'exports', (t) ->
       t.plan 1
 
-      t.deepEqual module.exports, { assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf}
+      t.deepEqual module.exports, {
+        assign, allPass, isObject, dbname, docid, urlname, mkkey, mkconf, priority
+      }
 
 ## Version 0.1.2
 
